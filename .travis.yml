@@ -42,9 +42,9 @@ script:
   # Enable the line below once we get all the test passing, currently most of the tests are failing 
   # so we'll just if the project compiles
   #Run All tests Unit and Instrumentation
-  - travis_wait ./gradlew :opensrp-app:clean
-  - travis_wait ./gradlew :opensrp-app:jacocoTestReport --stacktrace
-  - travis_wait ./gradlew :opensrp-app:coveralls --stacktrace
+  - ./gradlew :opensrp-app:clean
+  - ./gradlew :opensrp-app:jacocoTestReport --stacktrace
+  - ./gradlew :opensrp-app:coveralls --stacktrace
 
 after_failure:
   - pandoc opensrp-app/build/reports/tests/index.html -t plain
