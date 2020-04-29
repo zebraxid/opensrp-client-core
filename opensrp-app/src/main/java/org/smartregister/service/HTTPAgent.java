@@ -132,11 +132,12 @@ public class HTTPAgent {
 
             urlConnection.setRequestMethod("POST");
             urlConnection.setRequestProperty("Content-Type", "application/json; charset=utf-8");
-            urlConnection.setRequestProperty("Content-Encoding", "gzip");
+            //urlConnection.setRequestProperty("Content-Encoding", "gzip");
 
             OutputStream os = urlConnection.getOutputStream();
             BufferedOutputStream writer = new BufferedOutputStream(os);
-            writer.write(gzipCompression.compress(jsonPayload));
+            //writer.write(gzipCompression.compress(jsonPayload));
+            writer.write(jsonPayload.getBytes());
             writer.flush();
             writer.close();
             os.close();
